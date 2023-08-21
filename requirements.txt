@@ -1,0 +1,5 @@
+pandas
+matplotlib
+streamlit
+ipython
+seaborn==0.12.2
