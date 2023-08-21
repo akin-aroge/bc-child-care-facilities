@@ -1,4 +1,3 @@
-
 # deduced with the aid of chatGPT
 CITIES_REGIONS_MAP = {
     "100 mile house": "Interior",
@@ -214,11 +213,10 @@ CITIES_REGIONS_MAP = {
     "yarrow": "Coast Fraser",
     # manual additions
     "fort st. john": "North",
-    "langley": "Coast Fraser"
+    "langley": "Coast Fraser",
 }
 
 DATA_SOURCES = {
-    'facilities and spaces over time': 'https://catalogue.data.gov.bc.ca/dataset/b67255a7-8040-43c0-935c-d74f168af215/resource/63d9b10c-ec0b-432c-9291-e7b3db8c7e96/download/ccof_facilities_and_spaces_over_time.csv',
-    'child care map data': 'https://catalogue.data.gov.bc.ca/dataset/4cc207cc-ff03-44f8-8c5f-415af5224646/resource/9a9f14e1-03ea-4a11-936a-6e77b15eeb39/download/childcare_locations.csv'
+    "facilities and spaces over time": "https://catalogue.data.gov.bc.ca/dataset/b67255a7-8040-43c0-935c-d74f168af215/resource/63d9b10c-ec0b-432c-9291-e7b3db8c7e96/download/ccof_facilities_and_spaces_over_time.csv",
+    "child care map data": "https://catalogue.data.gov.bc.ca/dataset/4cc207cc-ff03-44f8-8c5f-415af5224646/resource/9a9f14e1-03ea-4a11-936a-6e77b15eeb39/download/childcare_locations.csv",
 }
-

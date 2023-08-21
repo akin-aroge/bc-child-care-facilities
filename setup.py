@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="electricity-prediction",
+    name="bc-childe-care-facilities",
     packages=find_packages(),
     version="0.0.1",
     description="",
