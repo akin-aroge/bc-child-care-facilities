@@ -8,7 +8,7 @@ from src.dashboard import stories
 import src.processing as proc
 from .trends import region_filter
 
-
+@st.cache_data
 def get_data():
     data = proc.get_location_dashboard_data()
     data = proc.enhance_facility_loc_df(data)
