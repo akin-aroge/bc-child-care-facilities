@@ -91,6 +91,12 @@ def enhance_facility_loc_df(facility_loc_df: pd.DataFrame) -> pd.DataFrame:
     )
     return df
 
+def get_location_dashboard_data(update=False):
+    """get dashboard data for the facility locations"""
+
+    facility_df, locs_df = get_raw_data(update=update)
+    return locs_df
+
 
 def get_dashboard_data(update=False):
     """Create the ehanced dataset for dashboard operations."""
@@ -98,6 +104,7 @@ def get_dashboard_data(update=False):
     #     facility_df, locs_df = proc.get_raw_data(update=False)
     #     facility_df_ex = proc.enhance_facility_df(facility_df=facility_df)
     #     facility_df_ex.to_csv()
+    # TODO: separate facility and location dataset retrieval
     facility_df, locs_df = get_raw_data(update=update)
     facility_df_ex = enhance_facility_df(facility_df=facility_df)
     locs_df_ex = enhance_facility_loc_df(facility_loc_df=locs_df)

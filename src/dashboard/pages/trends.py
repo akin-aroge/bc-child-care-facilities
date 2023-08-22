@@ -7,8 +7,6 @@ from src.dashboard import stories
 
 
 def main():
-
-    sec_kpi()
     select_year = year_filter()
     select_service = service_filter()
     select_region = region_filter()
@@ -36,9 +34,11 @@ def year_filter():
 
 def service_filter():
     services = dash_utils.get_facility_df_services()
+    # human_readable_services = [dash_utils.get_human_readable(item, item) for item in services]
 
     select_service = st.sidebar.selectbox(
-        "Select service to see trned:", options=services, index=0
+        "Select service type:", options=services, index=0,
+        format_func=lambda x: dash_utils.get_human_readable(x)
     )
     # select_service = [select_service]
     return select_service
@@ -53,36 +53,14 @@ def region_filter():
     return select_region
 
 
-def sec_kpi():
 
-    col1, col2 = st.columns(2)
-    cols_to_view = ["total_facilities", "total_spaces"]
-    n_facilities, delta_facilities = dash_utils.get_last_facility_count_n_change(
-        col_to_count=cols_to_view[0]
-    )
-    n_spaces, delta_spaces = dash_utils.get_last_facility_count_n_change(
-        col_to_count=cols_to_view[1]
-    )
-
-    with col1:
-        st.metric(
-            label=f"Latest number of {cols_to_view[0]}",
-            value=n_facilities,
-            delta=int(delta_facilities),
-        )
-    with col2:
-        st.metric(
-            label=f"Latest number of {cols_to_view[1]}",
-            value=n_spaces,
-            delta=int(delta_spaces),
-        )
 
 
 def sec_trend_view(data, col_to_view):
     st.write(
         f"""
-            ## Yearly trend in {col_to_view}.
-            The plot shows the distribution of the demand by the month of the year.
+            ## Facilities Annual Growth Trend
+            The plot shows the growth trend of facilities.
             """
     )
     fig = viz.plot_fac_trend(data=data, y_col=col_to_view)
@@ -103,4 +81,4 @@ def sec_trend_view(data, col_to_view):
         dash_utils.st_img_show(fig)
 
     with st.expander("See remarks"):
-        st.write(stories.ON_THE_TREND_IN_FACILITY_GROWTH)
+        st.write(stories.ON_FACILITY_TRENDS)
