@@ -67,8 +67,6 @@ def enhance_facility_df(facility_df: pd.DataFrame) -> pd.DataFrame:
 
     df = (
         facility_df.assign(date=pd.to_datetime(facility_df["ym"], format="%Y%m"))
-        # .pipe(make_growth_col, col_to_diff='total_facilities')
-        # .groupby(by='region').apply(get_group_diffs, col_to_diff='total_facilities')
         .pipe(_get_col_diffs, col_to_diff="total_facilities")
         .pipe(_get_col_diffs, col_to_diff="total_spaces")
         .assign(space_per_fac=lambda x: x["total_spaces"] / x["total_facilities"])
