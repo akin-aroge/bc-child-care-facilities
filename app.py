@@ -58,7 +58,7 @@ def sec_kpi():
         st.write("Monthly Update:")
     with col2:
         st.metric(
-            label=f"Latest number of toal facilities",
+            label=f"Latest number of total facilities",
             value=n_facilities,
             delta=int(delta_facilities),
         )

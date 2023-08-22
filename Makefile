@@ -5,3 +5,6 @@ install:
 
 format:
 	black .
+
+run:
+	streamlit run app.py
