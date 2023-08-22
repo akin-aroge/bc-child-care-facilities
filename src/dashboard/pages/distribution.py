@@ -105,5 +105,6 @@ def sec_map_view(data):
         ## Map of Facility Locations
         """
     )
+    st.caption("*click on location to view details* ")
     m = viz.plot_facility_map(data=data)
     st_folium.folium_static(m)
