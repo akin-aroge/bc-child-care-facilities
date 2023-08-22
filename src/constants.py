@@ -222,14 +222,14 @@ DATA_SOURCES = {
 }
 
 NAME_MAPPINGS = {
-    'region': 'Region',
-    'group_facilities': 'Group Facilities',
-    'group_facilities_change': 'Group Facilities Changes',
-    'total_facilities': 'Total Facilities',
-    'total_spaces':'Total Spaces',
-    'family_spaces': 'Family Spaces',
-    'date': 'Date',
-    'CITY': 'City'
+    "region": "Region",
+    "group_facilities": "Group Facilities",
+    "group_facilities_change": "Group Facilities Changes",
+    "total_facilities": "Total Facilities",
+    "total_spaces": "Total Spaces",
+    "family_spaces": "Family Spaces",
+    "date": "Date",
+    "CITY": "City",
 }
 
 BC_CENTRE_LAT_LON = [49.2827, -123.1207]

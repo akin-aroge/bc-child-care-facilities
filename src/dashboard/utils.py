@@ -42,13 +42,16 @@ def get_facility_df_regions():
     """Get the different facility regions."""
     return list(facility_df_ex.region.unique())
 
-def get_facility_loc_df_regions(facility_loc_ex_df:pd.DataFrame):
+
+def get_facility_loc_df_regions(facility_loc_ex_df: pd.DataFrame):
     """Get the different facility location regions."""
     return list(facility_loc_ex_df.region.unique())
 
-def get_facility_loc_df_service_type(facility_loc_ex_df:pd.DataFrame):
+
+def get_facility_loc_df_service_type(facility_loc_ex_df: pd.DataFrame):
     """Get the different facility location regions."""
     return list(facility_loc_ex_df.SERVICE_TYPE_CD.unique())
+
 
 def get_max_year() -> int:
     """get maximum year."""
@@ -88,7 +91,7 @@ def get_last_facility_count_n_change(col_to_count="total_facilities"):
 
 def st_img_show(fig: matplotlib.figure.Figure):
     buf = BytesIO()
-    fig.savefig(buf, format="png", bbox_inches='tight')
+    fig.savefig(buf, format="png", bbox_inches="tight")
     st.image(buf)
 
 
@@ -115,20 +118,20 @@ def filter_facility_df(
 
     return df
 
-def filter_facility_loc_df(data:pd.DataFrame, region_filter=None,
-                           service_type_filter=None
+
+def filter_facility_loc_df(
+    data: pd.DataFrame, region_filter=None, service_type_filter=None
 ) -> pd.DataFrame:
 
     """Apply filters to the facility dataframe"""
     df = data.copy()
-
 
     if region_filter is not None:
         region_mask = df["region"].apply(lambda x: x in region_filter)
         df = df[region_mask]
 
     if service_type_filter is not None:
-        mask = df['SERVICE_TYPE_CD'].apply(lambda x: x in service_type_filter)
+        mask = df["SERVICE_TYPE_CD"].apply(lambda x: x in service_type_filter)
         df = df[mask]
 
     return df
@@ -140,12 +143,11 @@ def get_latlon_centroid(lat, lon) -> list:
     centroid = pos.mean(axis=0)
     return centroid
 
+
 def get_human_readable(input):
 
     value = C.NAME_MAPPINGS.get(input, input)
     return value
-
-
 
 
 def save_value(value, fname):

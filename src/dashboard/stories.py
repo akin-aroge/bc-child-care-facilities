@@ -46,6 +46,6 @@ Coast Fraser region (about 60%) which consists of densely populated cities like 
 - Surrey and Vancouver make up over 20% of the total facilities
 
 """
-# - The distribution by region reflects what was observed in the cities. 
-# Cities such as Surrey make up the Coast Fraser Region accounting for most 
-# (about 61.82%) of the daycare facilities. 
+# - The distribution by region reflects what was observed in the cities.
+# Cities such as Surrey make up the Coast Fraser Region accounting for most
+# (about 61.82%) of the daycare facilities.

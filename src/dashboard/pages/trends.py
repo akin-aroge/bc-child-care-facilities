@@ -37,8 +37,10 @@ def service_filter():
     # human_readable_services = [dash_utils.get_human_readable(item, item) for item in services]
 
     select_service = st.sidebar.selectbox(
-        "Select service type:", options=services, index=0,
-        format_func=lambda x: dash_utils.get_human_readable(x)
+        "Select service type:",
+        options=services,
+        index=0,
+        format_func=lambda x: dash_utils.get_human_readable(x),
     )
     # select_service = [select_service]
     return select_service
@@ -51,9 +53,6 @@ def region_filter():
         label="select regions to view:", options=regions, default=regions
     )
     return select_region
-
-
-
 
 
 def sec_trend_view(data, col_to_view):

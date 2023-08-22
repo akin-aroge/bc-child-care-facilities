@@ -24,10 +24,10 @@ def get_raw_data(update=False):
             locs_df = pd.read_csv(facility_loc_path_local)
             facility_df = pd.read_csv(facility_time_path_local)
         except FileNotFoundError:
-            # TODO: 
+            # TODO:
             return_val = _pull_data_from_web()
             if return_val is False:
-                pass    
+                pass
             else:
                 facility_df, locs_df = return_val
                 facility_df.to_csv(facility_time_path_local, index=False)
@@ -35,7 +35,7 @@ def get_raw_data(update=False):
     else:
         return_val = _pull_data_from_web()
         if return_val is False:
-            pass    
+            pass
         else:
             facility_df, locs_df = return_val
 
@@ -90,6 +90,7 @@ def enhance_facility_loc_df(facility_loc_df: pd.DataFrame) -> pd.DataFrame:
         )
     )
     return df
+
 
 def get_location_dashboard_data(update=False):
     """get dashboard data for the facility locations"""
