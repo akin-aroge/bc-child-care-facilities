@@ -39,6 +39,9 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
+# powerpoint
+*.pptx
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -70,6 +73,7 @@ instance/
 
 # Scrapy stuff:
 .scrapy
+rough*
 
 # Sphinx documentation
 docs/_build/

@@ -4,6 +4,8 @@ from src.dashboard.pages import trends, distribution
 import src.processing as proc
 from src.dashboard import utils as dash_utils
 
+
+st.set_page_config(page_title="BC-ChildCare Facilities", layout="wide")
 APP_MODES = ["Facility Trends", "Facility Distribution"]
 
 
@@ -71,7 +73,7 @@ def sec_kpi():
 
 
 def main():
-    st.set_page_config(page_title="BC-ChildCare Facilities", layout="wide")
+    
     sec_update_data()
     st.sidebar.title("What would you like to do?:")
     st.title("BC Child Care Facilities")
